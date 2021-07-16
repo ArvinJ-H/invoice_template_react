@@ -1,6 +1,6 @@
 .title {
   font-size: 4vw;
-  margin: 1vw;
+  margin: 5vw;
 }
 .page {
   border-style: dotted;
@@ -10,10 +10,30 @@
 
 .invoice {
   display: flex;
-  margin-left: 1vw;
+  justify-content: space-between;
+  margin: 5vw;
 
   div {
-    margin-right: 6.5vw;
     display: flex;
+  }
+}
+
+.companyInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 5vw;
+  .border {
+    border-style: dashed;
+    width: 30%;
+  }
+  .name {
+    font-size: 2vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    margin-left: 1vw;
+  }
+  .otherDetail {
+    font-size: 1vw;
+    margin-left: 1vw;
   }
 }
