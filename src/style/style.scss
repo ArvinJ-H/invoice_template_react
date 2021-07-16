@@ -15,6 +15,7 @@
 
   div {
     display: flex;
+    font-size: 1.3vw;
   }
 }
 
@@ -36,6 +37,11 @@
     font-size: 1vw;
     margin-left: 1vw;
   }
+  .money{
+      @extend.name;
+      font-style: bold;
+      color: red;
+  }
 }
 
 .itemTable {
@@ -45,6 +51,7 @@
     width: 100%;
     margin: 5vw;
     border-spacing: 0;
+    font-size: 1.5vw;
 
     tr:last-child {
       td {
@@ -66,9 +73,8 @@
   justify-content: right;
 
   table {
-    margin: 5vw;
-    width: 35%;
     border-spacing: 0;
+    font-size: 1.5vw;
 
     thead tr:nth-child(2) {
       display: none;
@@ -87,4 +93,9 @@
       border-bottom: 1px solid black;
     }
   }
+}
+
+.payment{
+    @extend.companyInfo;
+    margin: 0 5vw 5vw 5vw;
 }

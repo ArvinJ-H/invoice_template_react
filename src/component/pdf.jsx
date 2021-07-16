@@ -8,6 +8,7 @@ import Sender from "./sender";
 import Receiver from "./receiver";
 import ItemTable from "./itemTable";
 import SumaryTable from "./summaryTable";
+import PaymentInfo from "./paymentInfo";
 
 import "../style/style.scss";
 class Document extends React.Component {
@@ -25,7 +26,10 @@ class Document extends React.Component {
           <Receiver />
         </div>
         <ItemTable />
-        <SumaryTable />
+        <div className="payment">
+          <PaymentInfo />
+          <SumaryTable />
+        </div>
       </div>
     );
   }
