@@ -1,6 +1,5 @@
 import React from "react";
 
-import CompanyName from "./companyName";
 import Title from "./title";
 import InvoiceNo from "./invoiceNo";
 import InvoiceDate from "./invoiceDate";
@@ -12,7 +11,6 @@ class Document extends React.Component {
     return (
       <div>
         <Title />
-        <CompanyName />
         <div className="invoice">
           <InvoiceNo />
           <InvoiceDate />
