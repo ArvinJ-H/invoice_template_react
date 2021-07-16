@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Download from './component/download'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Download/>
   </React.StrictMode>,
   document.getElementById('root')
 );
