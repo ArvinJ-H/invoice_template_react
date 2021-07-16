@@ -5,7 +5,9 @@ import InvoiceNo from "./invoiceNo";
 import InvoiceDate from "./invoiceDate";
 import DueDate from "./dueDate";
 import Sender from "./sender";
-import Receiver from './receiver'
+import Receiver from "./receiver";
+import ItemTable from "./itemTable";
+import SumaryTable from "./summaryTable";
 
 import "../style/style.scss";
 class Document extends React.Component {
@@ -22,6 +24,8 @@ class Document extends React.Component {
           <Sender />
           <Receiver />
         </div>
+        <ItemTable />
+        <SumaryTable />
       </div>
     );
   }
