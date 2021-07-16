@@ -98,4 +98,7 @@
 .payment{
     @extend.companyInfo;
     margin: 0 5vw 5vw 5vw;
+    .otherDetail{
+      font-weight: bold;
+    }
 }
