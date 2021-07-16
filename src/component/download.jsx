@@ -11,8 +11,9 @@ function App() {
   return (
     <div>
       <button onClick={handlePrint}>Print this out!</button>
-
-      <PDF ref={componentRef} />
+        <div className="page">
+        <PDF ref={componentRef} />
+        </div>
     </div>
   );
 }

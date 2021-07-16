@@ -1,11 +1,7 @@
 import React from "react";
 
-const Title = () => {
-  return (
-    <div>
-      <p className="title">Tax Invoice</p>
-    </div>
-  );
-};
+function Title() {
+  return <p className="title">Tax Invoice</p>;
+}
 
 export default Title;

@@ -1,8 +1,6 @@
-import React from 'react'
+import React from "react";
 
-function companyName(){
-    return(
-        <div><p>Test Only</p></div>
-    )
+function companyName() {
+  return <p>Jintao Han</p>;
 }
 export default companyName;
