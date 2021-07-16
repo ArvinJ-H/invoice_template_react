@@ -1,14 +1,19 @@
-.title{
-    font-size: 4vw;
-    margin: 1vw;
+.title {
+  font-size: 4vw;
+  margin: 1vw;
 }
-.page{
-    border-style: dotted;
-    aspect-ratio: 9/16;
-    width: 70%;
+.page {
+  border-style: dotted;
+  aspect-ratio: 9/16;
+  width: 70%;
 }
 
-.invoice{
+.invoice {
+  display: flex;
+  margin-left: 1vw;
+
+  div {
+    margin-right: 6.5vw;
     display: flex;
-    margin: 2.5vw;
+  }
 }
