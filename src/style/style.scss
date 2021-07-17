@@ -13,9 +13,10 @@
   justify-content: space-between;
   margin: 5vw;
 
-  div {
+  div[class^='invoice'], div[class*='invoice'] {
     display: flex;
     font-size: 1.3vw;
+    margin-top: 1.3vw;
   }
 }
 
@@ -101,4 +102,13 @@
     .otherDetail{
       font-weight: bold;
     }
+}
+
+div[class^='react-datepicker'], div[class*=' react-datepicker']{
+  input{
+    border: none;
+    width: 7.5vw;
+    font-size: 1.3vw;
+    padding-top: 0;
+  }
 }
