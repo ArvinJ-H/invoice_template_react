@@ -1,15 +1,52 @@
-import React from "react";
+import React, { useRef } from "react";
 
-function sender() {
+import ContentEditable from "react-contenteditable";
+
+function Sender() {
+  const companyName = useRef("Jintao Han");
+  const abn = useRef("31 981 973 365");
+  const email = useRef("arvin.hjt@gmail.com");
+
+  const handleCompany = (evt) => {
+    companyName.current = evt.target.value;
+  };
+  const handleAbn = (evt) => {
+    abn.current = evt.target.value;
+  };
+  const handleEmail = (evt) => {
+    email.current = evt.target.value;
+  };
+
+  const handleBlur = () => {
+    console.log(companyName.current);
+    console.log(abn.current);
+    console.log(email.current);
+  };
+
   return (
     <div className="border">
       <p className="name">From</p>
-      <p className="name">Jintao Han</p>
+      <ContentEditable
+        className="name"
+        html={companyName.current}
+        onBlur={handleBlur}
+        onChange={handleCompany}
+      />
       <br />
-      <p className="otherDetail">31 981 973 365</p>
-      <p className="otherDetail">arvin.hjt@gmail.com</p>
+      <ContentEditable
+        className="otherDetail"
+        html={abn.current}
+        onBlur={handleBlur}
+        onChange={handleCompany}
+      />
+      <ContentEditable
+        className="otherDetail"
+        html={email.current}
+        onBlur={handleBlur}
+        onChange={handleCompany}
+      />
     </div>
   );
 }
 
-export default sender;
+export default Sender;
