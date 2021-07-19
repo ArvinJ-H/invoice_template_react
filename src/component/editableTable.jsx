@@ -128,7 +128,6 @@ function ETable(tableData) {
     }, [tableData]);
 
     useEffect(() => {
-        //calculate the cost
         calculateCost();
         setAmount(tempAmount);
     }, [data]);
@@ -149,8 +148,6 @@ function ETable(tableData) {
     const updateMyData =  (rowIndex, columnId, value) => {
         // We also turn on the flag to not reset the page
         setSkipPageReset(true);
-        calculateCost();
-        console.log(data)
         setData((old) => {
             const result = old.map((row, index) => {
                 if (index === rowIndex) {
