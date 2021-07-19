@@ -24,7 +24,7 @@ function Receiver() {
   };
   return (
     <div className="border">
-      <p className="name">From</p>
+      <p className="name">To</p>
       <ContentEditable
         className="name"
         html={companyName.current}
