@@ -37,13 +37,13 @@ function Sender() {
         className="otherDetail"
         html={abn.current}
         onBlur={handleBlur}
-        onChange={handleCompany}
+        onChange={handleAbn}
       />
       <ContentEditable
         className="otherDetail"
         html={email.current}
         onBlur={handleBlur}
-        onChange={handleCompany}
+        onChange={handleEmail}
       />
     </div>
   );
