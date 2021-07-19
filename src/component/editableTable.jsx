@@ -99,40 +99,46 @@ function ETable(tableData) {
         () => [
             {
                 Header: "Item",
-                accessor: "col1", // accessor is the "key" in the data
+                accessor: "name", // accessor is the "key" in the data
             },
             {
                 Header: "Quantity",
-                accessor: "col2",
+                accessor: "quantity",
             },
             {
                 Header: "Unit Price (AUD)",
-                accessor: "col3",
+                accessor: "price",
             },
             {
                 Header: "Cost(AUD)",
-                accessor: "col4",
+                accessor: "cost",
             },
         ],
         []
     );
     const [amount, setAmount] = useState(0);
-    var money = 0;
+    var tempAmount = 0;
 
     const [data, setData] = React.useState(tableData.tableData);
     const [skipPageReset, setSkipPageReset] = React.useState(false);
+
     useEffect(() => {
-        setSkipPageReset(true);
         setData(tableData.tableData);
-        tableData.tableData.forEach(function (money) {
-            money = money + parseInt(money.col4);
-        });
-        setAmount(money);
         updateMyData();
     }, [tableData]);
-  
-    console.log(money);
-    console.log(amount + "moneyy");
+
+    useEffect(() => {
+        //calculate the cost
+        calculateCost();
+        setAmount(tempAmount);
+    }, [data]);
+
+    const calculateCost = () => {
+        data.forEach(function (unit) {
+            unit.cost = parseInt(unit.quantity) * parseInt(unit.price);
+            tempAmount = tempAmount + parseInt(unit.cost);
+        });
+    };
 
     // We need to keep the table from resetting the pageIndex when we
     // Update data. So we can keep track of that flag with a ref.
@@ -140,11 +146,13 @@ function ETable(tableData) {
     // When our cell renderer calls updateMyData, we'll use
     // the rowIndex, columnId and new value to update the
     // original data
-    const updateMyData = (rowIndex, columnId, value) => {
+    const updateMyData =  (rowIndex, columnId, value) => {
         // We also turn on the flag to not reset the page
         setSkipPageReset(true);
-        setData((old) =>
-            old.map((row, index) => {
+        calculateCost();
+        console.log(data)
+        setData((old) => {
+            const result = old.map((row, index) => {
                 if (index === rowIndex) {
                     return {
                         ...old[rowIndex],
@@ -152,8 +160,9 @@ function ETable(tableData) {
                     };
                 }
                 return row;
-            })
-        );
+            });
+            return result;
+        });
     };
 
     // After data chagnes, we turn the flag back off

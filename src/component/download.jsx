@@ -14,20 +14,23 @@ function App() {
     });
 
     const template = {
-        col1: "Item 1222",
-        col2: "1",
-        col3: "10000",
-        col4: "10000",
+        name: "Item 1222",
+        quantity: "1",
+        price: "10000",
+        cost: "",
     };
 
     const handleDelete = () => {
         datas.pop();
         setKey(key - 1);
+        console.log(datas)
     };
 
     const handleAdd = () => {
         datas.push(template);
         setKey(key + 1);
+        console.log(datas)
+
     };
 
     return (
