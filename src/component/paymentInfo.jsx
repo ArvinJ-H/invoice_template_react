@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import ContentEditable from "react-contenteditable";
 
-function PaymentInfo() {
+function PaymentInfo(total) {
     const bsb = useRef("062181");
     const accountNo = useRef("10704326");
 
@@ -40,7 +40,7 @@ function PaymentInfo() {
             </div>
 
             <p className="name">TOTAL DUE</p>
-            <p className="money"> AU$ 10,000</p>
+            <p className="money"> AU$ {total.amount}</p>
         </div>
     );
 }
