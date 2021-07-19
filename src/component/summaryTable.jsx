@@ -4,11 +4,10 @@ import { useTable } from "react-table";
 
 function SumaryTable(total) {
     const [subTotal, setSubTotal] = useState(total.amount);
-    console.log(subTotal);
     useEffect(() => {
         setSubTotal(total.amount);
     }, [total.amount]);
-    var data = [
+    const data = [
         {
             col1: "Subtotal (AUD)",
             col2: subTotal,
@@ -23,7 +22,6 @@ function SumaryTable(total) {
         },
     ];
 
-    console.log(data);
     const columns = React.useMemo(
         () => [
             {
