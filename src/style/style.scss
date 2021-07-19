@@ -1,114 +1,123 @@
 .title {
-  font-size: 4vw;
-  margin: 5vw;
+    font-size: 4vw;
+    margin: 5vw;
 }
 .page {
-  border-style: dotted;
-  aspect-ratio: 1/1.4142;
-  width: 70%;
+    border-style: dotted;
+    aspect-ratio: 1/1.4142;
+    width: 70%;
 }
 
 .invoice {
-  display: flex;
-  justify-content: space-between;
-  margin: 5vw;
-
-  div[class^='invoice'], div[class*='invoice'] {
     display: flex;
-    font-size: 1.3vw;
-    margin-top: 1.3vw;
-  }
+    justify-content: space-between;
+    margin: 5vw;
 }
 
 .companyInfo {
-  display: flex;
-  justify-content: space-between;
-  margin: 5vw;
-  .border {
-    border-style: dashed;
-    width: 30%;
-  }
-  .name {
-    font-size: 2vw;
-    margin-top: 0.5vw;
-    margin-bottom: 0.5vw;
-    margin-left: 1vw;
-  }
-  .otherDetail {
-    font-size: 1vw;
-    margin: 1vw 0 1vw 1vw;
-  }
-  .money{
-      @extend.name;
-      font-style: bold;
-      color: red;
-  }
+    display: flex;
+    justify-content: space-between;
+    margin: 5vw;
+    .border {
+        border-style: dashed;
+        width: 30%;
+    }
+    .name {
+        font-size: 2vw;
+        margin-top: 0.5vw;
+        margin-bottom: 0.5vw;
+        margin-left: 1vw;
+    }
+    .otherDetail {
+        font-size: 1vw;
+        margin: 1vw 0 1vw 1vw;
+    }
+    .money {
+        @extend.name;
+        font-style: bold;
+        color: red;
+    }
 }
 
 .itemTable {
-  display: flex;
-  justify-content: center;
-  table {
-    width: 100%;
-    margin: 5vw;
-    border-spacing: 0;
-    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    table {
+        width: 100%;
+        margin: 5vw;
+        border-spacing: 0;
+        font-size: 1.5vw;
 
-    tr:last-child {
-      td {
-        border-bottom: 0;
-      }
-    }
+        tr:last-child {
+            td {
+                border-bottom: 0;
+            }
+        }
 
-    th,
-    td {
-      text-align: right;
-      padding-right: 2vw !important;
-      border-bottom: 1px solid black;
+        th,
+        td {
+            text-align: right;
+            padding-right: 2vw !important;
+            border-bottom: 1px solid black;
+        }
     }
-  }
 }
 
 .summaryTable {
-  display: flex;
-  justify-content: right;
+    display: flex;
+    justify-content: right;
 
-  table {
-    border-spacing: 0;
-    font-size: 1.5vw;
+    table {
+        border-spacing: 0;
+        font-size: 1.5vw;
 
-    thead tr:nth-child(2) {
-      display: none;
+        thead tr:nth-child(2) {
+            display: none;
+        }
+
+        tr:last-child {
+            td {
+                border-bottom: 0;
+            }
+        }
+
+        th,
+        td {
+            text-align: right;
+            padding-right: 2vw !important;
+            border-bottom: 1px solid black;
+        }
     }
-
-    tr:last-child {
-      td {
-        border-bottom: 0;
-      }
-    }
-
-    th,
-    td {
-      text-align: right;
-      padding-right: 2vw !important;
-      border-bottom: 1px solid black;
-    }
-  }
 }
 
-.payment{
-    @extend.companyInfo;
+.payment {
+    @extend .companyInfo;
     margin: 0 5vw 5vw 5vw;
-    .otherDetail{
-      font-weight: bold;
+    .otherDetail {
+        font-weight: bold;
     }
 }
 
-div[class^='react-datepicker'], div[class*=' react-datepicker']{
-  input{
-    border: none;
-    width: 7.5vw;
+div[class^="react-datepicker"],
+div[class*=" react-datepicker"] {
+    input {
+        border: none;
+        width: 7.5vw;
+        font-size: 1.3vw;
+        padding-top: 0;
+    }
+}
+div[class^="invoice"],
+div[class*="invoice"] {
+    display: flex;
     font-size: 1.3vw;
-    padding-top: 0;
-  }
+    margin-top: 1.3vw;
+}
+
+.paymentDetail{
+  @extend .otherDetail;
+  margin-left: 0 !important;
+}
+.invoice-payment{
+  margin-top: 0 !important;
 }
