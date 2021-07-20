@@ -120,7 +120,7 @@ function ETable(tableData) {
 
     const [data, setData] = React.useState(tableData.tableData);
     const [skipPageReset, setSkipPageReset] = React.useState(false);
-    const [forceUpdate, setForceupdate] = useState(0)
+    const [forceUpdate, setForceupdate] = useState(0);
 
     useEffect(() => {
         setData(tableData.tableData);
@@ -132,20 +132,18 @@ function ETable(tableData) {
         setAmount(tempAmount);
     }, [data]);
 
-    useEffect(()=>{
-        updateMyData()
-    },[forceUpdate])
+    useEffect(() => {
+        updateMyData();
+    }, [forceUpdate]);
 
     const calculateCost = () => {
         data.forEach(function (unit) {
             unit.cost = parseInt(unit.quantity) * parseInt(unit.price);
             tempAmount = tempAmount + parseInt(unit.cost);
         });
-        setForceupdate(tempAmount)
+        setForceupdate(tempAmount);
         setAmount(tempAmount);
     };
-
-
 
     // We need to keep the table from resetting the pageIndex when we
     // Update data. So we can keep track of that flag with a ref.

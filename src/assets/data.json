@@ -3,30 +3,30 @@
         "name": "Item 1",
         "quantity": "1",
         "price": "10000",
-        "cost":""
+        "cost": ""
     },
     {
         "name": "Item 2",
         "quantity": "1",
         "price": "20002",
-        "cost":""
+        "cost": ""
     },
     {
         "name": "Item 3",
         "quantity": "1",
         "price": "30003",
-        "cost":""
+        "cost": ""
     },
     {
         "name": "Item 4",
         "quantity": "1",
         "price": "40004",
-        "cost":""
+        "cost": ""
     },
     {
         "name": "Item 5",
         "quantity": "1",
         "price": "50005",
-        "cost":""
+        "cost": ""
     }
 ]

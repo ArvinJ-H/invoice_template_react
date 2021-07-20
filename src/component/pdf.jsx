@@ -13,12 +13,7 @@ import "../style/style.scss";
 
 class Document extends React.Component {
     render() {
-        var amount = 0;
-        this.props.tableData.forEach(function (money) {
-            amount = amount + parseInt(money.col4);
-        });
-
-
+        const tableData = this.props.tableData;
         return (
             <div>
                 <Title />
@@ -31,8 +26,7 @@ class Document extends React.Component {
                     <Sender />
                     <Receiver />
                 </div>
-                <ETable tableData={this.props.tableData}/>
-               
+                <ETable tableData={tableData} />
             </div>
         );
     }

@@ -23,14 +23,11 @@ function App() {
     const handleDelete = () => {
         datas.pop();
         setKey(key - 1);
-        console.log(datas)
     };
 
     const handleAdd = () => {
         datas.push(template);
         setKey(key + 1);
-        console.log(datas)
-
     };
 
     return (
