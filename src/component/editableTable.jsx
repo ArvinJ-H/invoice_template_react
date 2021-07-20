@@ -26,7 +26,6 @@ const EditableCell = ({
     React.useEffect(() => {
         setValue(initialValue);
     }, [initialValue]);
-
     return <input value={value} onChange={onChange} onBlur={onBlur} />;
 };
 
@@ -121,6 +120,7 @@ function ETable(tableData) {
 
     const [data, setData] = React.useState(tableData.tableData);
     const [skipPageReset, setSkipPageReset] = React.useState(false);
+    const [forceUpdate, setForceupdate] = useState(0)
 
     useEffect(() => {
         setData(tableData.tableData);
@@ -132,12 +132,20 @@ function ETable(tableData) {
         setAmount(tempAmount);
     }, [data]);
 
+    useEffect(()=>{
+        updateMyData()
+    },[forceUpdate])
+
     const calculateCost = () => {
         data.forEach(function (unit) {
             unit.cost = parseInt(unit.quantity) * parseInt(unit.price);
             tempAmount = tempAmount + parseInt(unit.cost);
         });
+        setForceupdate(tempAmount)
+        setAmount(tempAmount);
     };
+
+
 
     // We need to keep the table from resetting the pageIndex when we
     // Update data. So we can keep track of that flag with a ref.
@@ -145,7 +153,7 @@ function ETable(tableData) {
     // When our cell renderer calls updateMyData, we'll use
     // the rowIndex, columnId and new value to update the
     // original data
-    const updateMyData =  (rowIndex, columnId, value) => {
+    const updateMyData = (rowIndex, columnId, value) => {
         // We also turn on the flag to not reset the page
         setSkipPageReset(true);
         setData((old) => {
@@ -160,6 +168,7 @@ function ETable(tableData) {
             });
             return result;
         });
+        // console.log(data)
     };
 
     // After data chagnes, we turn the flag back off
